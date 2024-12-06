@@ -36,3 +36,10 @@ class ModelTests(TestCase):
         """Test that creating a user without an email raises a ValueError."""
         with self.assertRaises(ValueError):
             get_user_model().objects.create_user('','sample123')
+
+    def test_create_superuser(self):
+        """Tet creating a superuser."""
+        user = get_user_model().objects.create_superuser('test@example.com', 'test123')
+
+        self.assertTrue(user.is_superuser) # this will give all the access to everything inside django admin
+        self.assertTrue(user.is_staff) # this will allow us to login to django admin
