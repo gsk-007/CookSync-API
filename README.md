@@ -1,4 +1,4 @@
-# Recipe API
+# CookSync API
 
 ## Description
 
